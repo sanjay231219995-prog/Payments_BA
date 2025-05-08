@@ -1,0 +1,17 @@
+﻿Rule_ID,Rail,Business_Rule,ISO_Field,Validation_Logic,Error_Code,Severity,Test_Case_IDs
+R01,ISO/RTP,Amount must be > 0,IntrBkSttlmAmt,@value > 0 else reject,ERR_NEG_AMT,Reject,TC03
+R02a,ISO/RTP,BIC format must be valid,DbtrAgt/FinInstnId/BICFI,8 or 11 chars A–Z0–9; regex ^[A-Z0-9]{8}([A-Z0-9]{3})?$,ERR_BIC_FORMAT,Reject,TC02a
+R02b,ISO/RTP,BIC must exist in directory,DbtrAgt/FinInstnId/BICFI,Lookup in SwiftRef (mock); reject if missing,ERR_INVALID_BIC,Reject,TC02b
+R03,ISO/RTP,Sanctions name match -> Hold,Dbtr/Nm or Cdtr/Nm,If name in watchlist then status=ON_HOLD,WARN_SANCTION,Hold,TC04
+R04,ISO/RTP,Currency must be supported,IntrBkSttlmAmt/@Ccy,Allow INR/USD/EUR else reject,ERR_UNSUPPORTED_CCY,Reject,TC05
+R05,ISO/RTP,Value date window,ReqdExctnDt,Must be today..+2 days else reject,ERR_INVALID_DATE,Reject,TC06
+R06,ISO/RTP,Cancel only Pending/On Hold,-,If COMPLETED then 409 conflict,ERR_ALREADY_COMPLETED,Conflict,TC10
+R07,ISO/RTP,Release only when On Hold,-,If not ON_HOLD then 409 conflict,ERR_NOT_ON_HOLD,Conflict,TC08
+R08,ISO,Names required,Dbtr/Nm & Cdtr/Nm,Non-empty strings else reject,ERR_MISSING_NAME,Reject,TC11
+R09,RTP,Amount limit policy,-,"Amount <= scheme limit (mock 1,00,000 INR)",ERR_LIMIT_EXCEEDED,Reject,TC12
+R10,ISO,CCY/amount coherence,IntrBkSttlmAmt/@Ccy,Disallow fractional paise for INR,ERR_AMOUNT_PRECISION,Reject,TC13
+R11,ISO,Idempotency (future),-,Recommend Idempotency-Key header,N/A,Info,-
+R12,ISO,Retry/backoff (future),-,Recommend exponential backoff,N/A,Info,-
+R13,ISO,Audit trail on hold/release,-,"Capture reviewer, timestamp, outcome",N/A,Info,"TC04, TC07"
+R14,ACH,Name/Account match (ACH),-,Reject if mismatch (mock),ERR_ACH_NAME_MISMATCH,Reject,TC14
+R15,UPI,UPI VPA format (optional),-,Regex check on VPA,ERR_VPA_FORMAT,Reject,TC15
