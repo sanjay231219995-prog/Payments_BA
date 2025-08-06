@@ -1,7 +1,7 @@
 # Regulatory Workflow Configuration — Global Payments Cockpit (BA PoC)
 
-> Purpose: Define how sanctions screening & regulatory controls are applied in the PoC, including
-> parameters, matching strategy, statuses, SLAs, and audit fields. This is simulated on a Postman Mock Server.
+> Purpose: Define how sanctions screening & regulatory controls are applied, including
+> parameters, matching strategy, statuses, SLAs, and audit fields. This is simulated on a Postman Mock Server with SwiftRef API integration.
 
 ---
 
@@ -25,12 +25,12 @@
 
 ---
 
-## 3. Watchlist & Matching Strategy (PoC)
+## 3. Watchlist & Matching Strategy 
 - **Watchlist source (mock):** `watchlist/mock_watchlist.csv` (subset resembling OFAC/EU names)
 - **Refresh cadence:** Manual (PoC); target daily in production
 - **Matching algorithm (PoC):**  
-  - Primary: **Exact & case-insensitive** match (simulated)  
-  - Optional: Fuzzy (Jaro/Winkler) ≥ **0.92** (simulated toggle)
+  - Primary: **Exact & case-insensitive** match   
+  - Optional: Fuzzy (Jaro/Winkler) ≥ **0.92** 
 - **Normalization:** strip punctuation, multiple spaces, diacritics
 - **List hygiene rules:**
   - Merge duplicates by canonical name
@@ -92,7 +92,7 @@
 
 ---
 
-## 9. Data Retention & Privacy (PoC posture)
+## 9. Data Retention & Privacy 
 - Mask PII in shared artifacts/screenshots.
 - Limit PoC datasets to synthetic names.
 - In production: align to local data-retention & GDPR/DPDP mandates.
