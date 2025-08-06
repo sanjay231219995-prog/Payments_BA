@@ -94,7 +94,7 @@ Returns the current status of a previously initiated transaction.
 
 ---
 
-## 4. ⚠️ Error Taxonomy
+## 4. Error Taxonomy
 
 | Code                | Description                         |
 |---------------------|-------------------------------------|
@@ -107,7 +107,7 @@ Returns the current status of a previously initiated transaction.
 
 ---
 
-## 5. 🔁 Sample Workflows
+## 5. Sample Workflows
 
 ### A. Happy Path
 1. `POST /payments` → 200 (Pending)
@@ -122,7 +122,7 @@ Returns the current status of a previously initiated transaction.
 
 ---
 
-## 6. 🧾 ISO 20022 Mapping Summary
+## 6. ISO 20022 Mapping Summary
 
 | Field         | ISO Element                      |
 |---------------|----------------------------------|
@@ -134,7 +134,7 @@ Returns the current status of a previously initiated transaction.
 
 ---
 
-## 7. 📈 Mock Server Logic
+## 7. Mock Server Logic
 
 - All validations and logic are simulated through **Postman examples**
 - Status progression hardcoded for illustration
@@ -142,7 +142,7 @@ Returns the current status of a previously initiated transaction.
 
 ---
 
-## 8. 📎 Linked Artifacts
+## 8. Linked Artifacts
 
 - BRD: `docs/BRD.md`
 - Business Rules Mapping: `mappings/business_rules_mapping.xlsx`
