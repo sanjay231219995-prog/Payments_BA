@@ -1,14 +1,13 @@
 # # 📄 Business Requirements Document (BRD)  
 **Project:** Global Payments – Cross-Border & Instant Payments  
-**Type:** Business Analyst PoC (Proof of Concept)  
-**Version:** 1.0  
-**Date:** August 2025  
+ 
+**Date:** June 2025  
 
 ---
 
-## 1. 🎯 Purpose & Scope
+## 1. Purpose & Scope
 
-This document outlines the business requirements for designing and validating a payments cockpit that standardizes **cross-border (SWIFT/ISO 20022)** and **instant domestic payment flows (NEFT/RTP)** using Postman mock APIs.
+This document outlines the business requirements for designing and validating a payments cockpit that standardizes **cross-border (SWIFT/ISO 20022)** and **instant domestic payment flows (NEFT/RTP)** using SwiftRef API and Postman mock APIs.
 
 The initiative aims to simulate key operational workflows, enforce ISO 20022 semantic rules (especially pacs.008 structure), and demonstrate exception handling and operational readiness KPIs such as STP% and error taxonomies.
 
@@ -25,15 +24,13 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
   - Regulatory config (mock)  
   - Test plan & results  
   - Operational dashboards (mock)
-
-### ❌ Out of Scope
-- Live bank or SWIFT network integration  
-- Real sanctions screening or ledger booking  
-- Full ISO 20022 pacs.008 envelope (focus is on core high-value fields)
+  - Live bank or SWIFT network integration
+  - Real sanctions screening or ledger booking
+  - Full ISO 20022 pacs.008 envelope (focus is on core high-value fields)
 
 ---
 
-## 2. 🧭 Objectives
+## 2. Objectives
 
 - Capture **field-level business rules** and align them to ISO 20022 message components  
 - Define a clear **error taxonomy** for common failure points  
@@ -42,7 +39,7 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 3. 👥 Stakeholders (Simulated Roles)
+## 3. Stakeholders (Simulated Roles)
 
 | Role               | Responsibilities                                  |
 |--------------------|---------------------------------------------------|
@@ -53,7 +50,7 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 4. 📌 Assumptions & Constraints
+## 4. Assumptions & Constraints
 
 - All flows are simulated using SwiftRef Sandbox API  
 - No production or personally identifiable data used  
@@ -62,7 +59,7 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 5. 🔍 Business Rules Summary
+## 5. Business Rules Summary
 
 > Full rules mapping available in: `mappings/business_rules_mapping.xlsx`
 
@@ -78,7 +75,7 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 6. 🧾 ISO 20022 Field Mapping (Extract – pacs.008)
+## 6. ISO 20022 Field Mapping (Extract – pacs.008)
 
 | Business Field     | ISO 20022 Mapping                  |
 |--------------------|-------------------------------------|
@@ -91,7 +88,7 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 7. 👣 User Journeys (High-Level)
+## 7. User Journeys (High-Level)
 
 1. **Happy Path**:  
    Initiate Payment → Pass validations → Status: `Completed`  
@@ -105,7 +102,7 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 8. ✅ Success Criteria / Acceptance Conditions
+## 8. Success Criteria / Acceptance Conditions
 
 - BRD and FSD approved by relevant stakeholders  
 - Business rule mapping aligned with ISO 20022 semantics  
@@ -116,18 +113,18 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 9. 📊 Operational Metrics (Simulated)
+## 9. Operational Metrics 
 
 - **STP (Straight-Through Processing) %** = `Successful (200)` / `Total Requests`  
 - **Top 3 Error Codes** by volume:  
   - `ERR_INVALID_BIC`  
   - `ERR_NEG_AMT`  
   - `ERR_UNSUPPORTED_CURRENCY`  
-- **Hold Release SLA** (mock) = 15 min (auto-unhold simulated)
+- **Hold Release SLA** (mock) = 15 min 
 
 ---
 
-## 11. 📁 Deliverables
+## 10. Deliverables
 
 | Artifact                       | Location                                 |
 |-------------------------------|------------------------------------------|
@@ -140,7 +137,7 @@ The initiative aims to simulate key operational workflows, enforce ISO 20022 sem
 
 ---
 
-## 12. 📅 Project Timeline (7-Day PoC)
+## 11. Project Timeline (7-Day PoC)
 
 | Phase              | Duration | Description                              |
 |--------------------|----------|------------------------------------------|
