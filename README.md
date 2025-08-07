@@ -75,5 +75,7 @@ This repo was designed as a **domain case walk through** of Business/Functional 
 ├── analytics/ # PNG dashboards and visual insights
 └── README.md # You're here
 
-*Email:* sanjay231219995@email.com  
+*Email:* sanjay231219995@email.com 
+
+*Notion:* https://www.notion.so/243751cd48798072ae56c55e71a7ceaa?v=243751cd487981339717000ca99d8757&source=copy_link
 
